@@ -16,6 +16,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v instanceof Button) {
             Button button = (Button) v;
+            TextView textView = (TextView) findViewById(R.id.txtResult);
 
             Log.d("abc", "onClick: " + v.getTag());
             String tag = v.getTag().toString();
@@ -66,7 +68,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (game.getXO(x, y).compareTo("?") == 0) {
 
                 game.setXO(x, y);
+                textView.setText(game.getActifPlayer()+"'s turn");
+
                 button.setText(game.getXO(x, y));
+                if(game.winnaar()!='?'){
+
+                    textView.setText(game.winnaar()+" won!");
+                }
+                if(game.winnaar()=='G'){
+
+                    textView.setText("Tie!");
+                }
             }
             else{
                 Toast toast = Toast.makeText(getApplicationContext(), "Veld is reeds ingevuld.", Toast.LENGTH_SHORT);

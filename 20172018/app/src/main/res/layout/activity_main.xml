@@ -94,24 +94,34 @@
             />
 
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
-            android:id="@+id/txtTurn"
+            android:id="@+id/txtResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="30sp"/>
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:text="O's turn"
+            android:textSize="30sp" />
 
-        <Button
-            android:id="@+id/btnReset"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Reset" />
-        <Button
-            android:id="@+id/btnScores"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Scores" />
     </RelativeLayout>
+
+
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset" />
+    <Button
+        android:id="@+id/btnScores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scores" />
+
 </LinearLayout>
